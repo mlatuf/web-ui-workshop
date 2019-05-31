@@ -6,9 +6,10 @@ import injectSaga from 'utils/injectSaga';
 import {
   makeSelectRepos,
   makeSelectLoading,
-  makeSelectError
+  makeSelectError,
+  makeSelectTweets
 } from 'containers/App/selectors';
-import { loadRepos } from '../App/actions';
+import { loadRepos, loadTweets } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
@@ -20,6 +21,10 @@ const mapDispatchToProps = (dispatch) => ({
   onSubmitForm: (evt) => {
     if (evt !== undefined && evt.preventDefault) evt.preventDefault();
     dispatch(loadRepos());
+  },
+  getTweets: (evt) => {
+    if (evt !== undefined && evt.preventDefault) evt.preventDefault();
+    dispatch(loadTweets())
   }
 });
 
@@ -27,7 +32,8 @@ const mapStateToProps = createStructuredSelector({
   repos: makeSelectRepos(),
   username: makeSelectUsername(),
   loading: makeSelectLoading(),
-  error: makeSelectError()
+  error: makeSelectError(),
+  tweets: makeSelectTweets()
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);

@@ -8,14 +8,17 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
     return (
       <div className="header">
         <a href="https://twitter.com/flexdinesh">
-          <img src={Banner} alt="react-redux-boilerplate - Logo" />
+          Gwitter
         </a>
         <div className="nav-bar">
           <Link className="router-link" to="/">
             Home
           </Link>
-          <Link className="router-link" to="/features">
-            Features
+          <Link className="router-link" to="/">
+            Search
+          </Link>
+          <Link className="router-link" to="/settings">
+            Settings
           </Link>
         </div>
       </div>

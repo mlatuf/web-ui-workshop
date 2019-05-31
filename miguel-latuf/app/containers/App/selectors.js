@@ -33,6 +33,16 @@ const makeSelectLocation = () => createSelector(
   (routeState) => routeState.get('location').toJS()
 );
 
+const makeSelectTweets = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.getIn('tweets')
+);
+
+const makeSelectTweetCount = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('count')
+);
+
 export {
   selectGlobal,
   makeSelectCurrentUser,
@@ -40,4 +50,6 @@ export {
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
+  makeSelectTweets,
+  makeSelectTweetCount
 };

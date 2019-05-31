@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import ReposList from 'components/ReposList';
+import Timeline from 'components/Timeline';
 import './style.scss';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -15,41 +15,36 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
    * when initial state username is not null, submit the form to load repos
    */
   componentDidMount() {
-    const { username, onSubmitForm } = this.props;
+    const { username, onSubmitForm, getTweets } = this.props;
     if (username && username.trim().length > 0) {
       onSubmitForm();
     }
+    getTweets();
   }
 
   render() {
     const {
-      loading, error, repos, username, onChangeUsername, onSubmitForm
+      loading, error, repos, username, onChangeUsername, onSubmitForm, count, tweets
     } = this.props;
-    const reposListProps = {
+
+    const timelineProps = {
       loading,
       error,
-      repos
+      tweets
     };
 
     return (
       <article>
         <Helmet>
-          <title>Home Page</title>
-          <meta name="description" content="A React.js Boilerplate application homepage" />
+          <title>Gwitter</title>
         </Helmet>
         <div className="home-page">
           <section className="centered">
-            <h2>Start your next react project in seconds</h2>
-            <p>
-              A minimal <i>React-Redux</i> boilerplate with all the best practices
-            </p>
+            <h2>Home</h2>
           </section>
           <section>
-            <h2>Try me!</h2>
-            <form onSubmit={onSubmitForm}>
+            {/* <form onSubmit={onSubmitForm}>
               <label htmlFor="username">
-                Show Github repositories by
-                <span className="at-prefix">@</span>
                 <input
                   id="username"
                   type="text"
@@ -58,8 +53,8 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
                   onChange={onChangeUsername}
                 />
               </label>
-            </form>
-            <ReposList {...reposListProps} />
+            </form> */}
+            {tweets && <Timeline {...timelineProps} />}
           </section>
         </div>
       </article>
@@ -70,7 +65,7 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
 HomePage.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+  tweets: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
   onChangeUsername: PropTypes.func

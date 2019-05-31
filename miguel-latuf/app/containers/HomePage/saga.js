@@ -5,11 +5,11 @@
 import {
   call, put, select, takeLatest
 } from 'redux-saga/effects';
-import { LOAD_REPOS } from 'containers/App/constants';
-import { reposLoaded, repoLoadingError } from 'containers/App/actions';
+import { LOAD_REPOS, LOAD_TWEETS } from 'containers/App/constants';
+import { reposLoaded, repoLoadingError, tweetLoadingError, tweetsLoaded } from 'containers/App/actions';
 
 import request from 'utils/request';
-import { makeSelectUsername } from 'containers/HomePage/selectors';
+import { makeSelectUsername, makeSelectTweetsCount } from 'containers/HomePage/selectors';
 
 /**
  * Github repos request/response handler
@@ -28,13 +28,33 @@ export function* getRepos() {
   }
 }
 
+export function* getTweets() {
+  const count = yield select(makeSelectTweetsCount());
+  const requestURL = `http://localhost:8080/timeline?count=${count}`;
+  try {
+    const tweets = yield call(request, requestURL);
+    yield put(tweetsLoaded(tweets));
+  } catch (err) {
+    yield put (tweetLoadingError(err));
+  }
+}
 /**
  * Root saga manages watcher lifecycle
  */
-export default function* githubData() {
+// export default function* githubData() {
+//   // Watches for LOAD_REPOS actions and calls getRepos when one comes in.
+//   // By using `takeLatest` only the result of the latest API call is applied.
+//   // It returns task descriptor (just like fork) so we can continue execution
+//   // It will be cancelled automatically on component unmount
+//   yield takeLatest(LOAD_REPOS, getRepos);
+// }
+export default function* tweetsData() {
   // Watches for LOAD_REPOS actions and calls getRepos when one comes in.
   // By using `takeLatest` only the result of the latest API call is applied.
   // It returns task descriptor (just like fork) so we can continue execution
   // It will be cancelled automatically on component unmount
-  yield takeLatest(LOAD_REPOS, getRepos);
+  yield takeLatest(LOAD_TWEETS, getTweets);
 }
+
+
+

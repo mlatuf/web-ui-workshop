@@ -19,6 +19,9 @@ import {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
+  LOAD_TWEETS_SUCCESS,
+  LOAD_TWEETS,
+  LOAD_TWEETS_ERROR,
 } from './constants';
 
 /**
@@ -58,6 +61,26 @@ export function reposLoaded(repos, username) {
 export function repoLoadingError(error) {
   return {
     type: LOAD_REPOS_ERROR,
+    error,
+  };
+}
+
+export function loadTweets() {
+  return {
+    type: LOAD_TWEETS,
+  };
+}
+
+export function tweetsLoaded(tweets) {
+  return {
+    type: LOAD_TWEETS_SUCCESS,
+    tweets
+  }
+}
+
+export function tweetLoadingError(error) {
+  return {
+    type: LOAD_TWEETS_ERROR,
     error,
   };
 }
