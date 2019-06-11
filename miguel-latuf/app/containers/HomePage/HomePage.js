@@ -4,9 +4,11 @@
  * This is the first thing users see of our App, at the '/' route
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import Timeline from 'components/Timeline';
 import './style.scss';
 
@@ -34,15 +36,14 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     };
 
     return (
-      <article>
-        <Helmet>
-          <title>Gwitter</title>
-        </Helmet>
-        <div className="home-page">
-          <section className="centered">
-            <h2>Home</h2>
-          </section>
-          <section>
+      <Fragment>
+        <Container>
+          <Typography component="div" className="home-page" style={{ height: '100vh' }}>
+            {tweets && <Timeline {...timelineProps} />}
+          </Typography>
+        </Container>
+        {/* <div className="home-page">
+          <section> */}
             {/* <form onSubmit={onSubmitForm}>
               <label htmlFor="username">
                 <input
@@ -54,10 +55,10 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
                 />
               </label>
             </form> */}
-            {tweets && <Timeline {...timelineProps} />}
+            {/* {tweets && <Timeline {...timelineProps} />}
           </section>
-        </div>
-      </article>
+        </div> */}
+      </Fragment>
     );
   }
 }
