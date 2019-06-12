@@ -15,7 +15,7 @@
  *    }
  */
 
-import { CHANGE_USERNAME } from './constants';
+import { CHANGE_USERNAME, CHANGE_TWEETSCOUNT } from './constants';
 
 /**
  * Changes the input field of the form
@@ -28,5 +28,12 @@ export function changeUsername(name) {
   return {
     type: CHANGE_USERNAME,
     name
+  };
+}
+
+export function changeTweetsCount(count) {
+  return {
+    type: CHANGE_TWEETSCOUNT,
+    count
   };
 }

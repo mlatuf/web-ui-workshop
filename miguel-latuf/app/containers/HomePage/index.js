@@ -4,23 +4,20 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 import {
-  makeSelectRepos,
   makeSelectLoading,
   makeSelectError,
   makeSelectTweets
 } from 'containers/App/selectors';
-import { loadRepos, loadTweets } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
+import { loadTweets } from '../App/actions';
+import { changeTweetsCount } from './actions';
+import { makeSelectTweetsCount } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import HomePage from './HomePage';
 
 const mapDispatchToProps = (dispatch) => ({
-  onChangeUsername: (evt) => dispatch(changeUsername(evt.target.value)),
-  onSubmitForm: (evt) => {
-    if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-    dispatch(loadRepos());
+  onChangeTweetsCount: (value) => {
+    dispatch(changeTweetsCount(value))
   },
   getTweets: (evt) => {
     if (evt !== undefined && evt.preventDefault) evt.preventDefault();
@@ -29,11 +26,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
   loading: makeSelectLoading(),
   error: makeSelectError(),
-  tweets: makeSelectTweets()
+  tweets: makeSelectTweets(),
+  tweetsCount: makeSelectTweetsCount()
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);

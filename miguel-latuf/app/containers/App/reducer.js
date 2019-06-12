@@ -22,10 +22,6 @@ import {
 const initialState = fromJS({
   loading: false,
   error: false,
-  currentUser: false,
-  userData: {
-    repositories: false,
-  },
   tweets: false
 });
 
@@ -38,9 +34,9 @@ function appReducer(state = initialState, action) {
       .set('error', false)
       .setIn('tweets', false);
     case LOAD_TWEETS_SUCCESS:
-        return state
-          .setIn('tweets', action.tweets)
-          .set('loading', false);
+      return state
+        .setIn('tweets', action.tweets)
+        .set('loading', false);
     case LOAD_TWEETS_ERROR:
       return state
         .set('error', action.error)

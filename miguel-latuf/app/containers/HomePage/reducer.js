@@ -11,22 +11,18 @@
  */
 import { fromJS } from 'immutable';
 
-import { CHANGE_USERNAME, CHANGE_TWEETSCOUNT } from './constants';
+import { CHANGE_TWEETSCOUNT } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
-  username: '',
-  count: 100
+  tweetsCount: 8
 });
 
 function homeReducer(state = initialState, action) {
   switch (action.type) {
-    case CHANGE_USERNAME:
-      // Delete prefixed '@' from the github username
-      return state.set('username', action.name.replace(/@/gi, ''));
-  
+
     case CHANGE_TWEETSCOUNT:
-      return state.set('count', action.count);   
+      return state.set('tweetsCount', action.count);   
     
     default:
       return state;
