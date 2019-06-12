@@ -1,25 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import List from 'components/List';
-import ListItem from 'components/ListItem';
-import LoadingIndicator from 'components/LoadingIndicator';
+import { CircularProgress, List, ListItem } from '@material-ui/core';
+import {  makeStyles } from '@material-ui/core/styles';
 import TweetItem from 'containers/TweetItem';
 
+const useStyles = makeStyles(theme => ({
+  progress: {
+    margin: theme.spacing(2),
+  },
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  user: {
+    fontWeight: "bold"
+  },
+  text: {
+    display: 'inline',
+  },
+}));
+
 const Timeline = ({ loading, error, tweets }) => {
+  const classes = useStyles();
+
   if (loading) {
-    return <List component={LoadingIndicator} />;
+    return <CircularProgress className={classes.progress}/>;
   }
 
   if (error !== false) {
     const ErrorComponent = () => (
-      <ListItem item={'Something went wrong, please try again!'} />
+      <ListItem alignItems="flex-start">
+        <p>Something went wrong, please try again!</p>
+      </ListItem>
     );
-    return <List component={ErrorComponent} />;
+    return <List>{ErrorComponent}</List>
   }
 
   if (tweets !== false) {
-    return <List items={tweets} component={TweetItem} />;
+    let content = tweets.map((item) => (
+      <TweetItem classes={classes} item={item}/>      
+    ));
+    return <List>{content}</List>;
   }
 
   return null;

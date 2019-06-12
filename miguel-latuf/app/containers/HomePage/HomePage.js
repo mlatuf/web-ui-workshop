@@ -5,9 +5,7 @@
  */
 
 import React, { Fragment } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import Timeline from 'components/Timeline';
 import './style.scss';
@@ -37,11 +35,9 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
 
     return (
       <Fragment>
-        <Container>
-          <Typography component="div" className="home-page" style={{ height: '100vh' }}>
-            {tweets && <Timeline {...timelineProps} />}
-          </Typography>
-        </Container>
+        <Typography component="div" style={{ height: '100vh' }}>
+          {tweets && <Timeline {...timelineProps} />}
+        </Typography>
         {/* <div className="home-page">
           <section> */}
             {/* <form onSubmit={onSubmitForm}>
