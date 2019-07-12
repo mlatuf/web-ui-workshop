@@ -13,7 +13,7 @@ const makeSelectUsername = () => createSelector(
 
 const makeSelectTweetsCount = () => createSelector(
   selectHome,
-  (homeState) => homeState.get('count')
+  (homeState) => homeState.get('tweetsCount')
 );
 
 export {
