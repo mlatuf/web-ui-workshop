@@ -17,8 +17,6 @@ import SearchIcon from "@material-ui/icons/SearchOutlined";
 import SettingsIcon from "@material-ui/icons/SettingsOutlined";
 
 import HomePage from "containers/HomePage/Loadable";
-import FeaturePage from "containers/FeaturePage/Loadable";
-import NotFoundPage from "containers/NotFoundPage/Loadable";
 import "./style.scss";
 
 const useStyles = makeStyles(theme => ({
@@ -45,15 +43,14 @@ const App = () => {
           onChange={handleChange}
           variant="fullWidth"
           indicatorColor="primary"
-          textColor="primary"
-        >
+          textColor="primary">
           <Tab icon={<HomeIcon />} aria-label="Home" />
           <Tab icon={<SearchIcon />} aria-label="Search" />
           <Tab icon={<SettingsIcon />} aria-label="Settings" />
         </Tabs>
         {value === 0 && <HomePage />}
-        {value === 1 && <FeaturePage />}
-        {value === 2 && <NotFoundPage />}
+        {value === 1 && <HomePage />}
+        {value === 2 && <HomePage />}
       </Paper>
     </Container>
   );

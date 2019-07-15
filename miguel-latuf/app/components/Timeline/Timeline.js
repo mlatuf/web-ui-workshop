@@ -23,6 +23,16 @@ const useStyles = makeStyles(theme => ({
     display: 'inline',
     textAlign: "center"
   },
+  iconContainer: {
+    display: 'inline-flex',
+    position: 'relative',
+    top: 0,
+    right: 0,
+    width: '90%',
+    padding: '0px 12%',
+    transform: 'translateY(-20%)',
+    justifyContent: 'space-between'
+  }
 }));
 
 const Timeline = ({ loading, error, tweets, tweetsCount, onIncrementCount }) => {
