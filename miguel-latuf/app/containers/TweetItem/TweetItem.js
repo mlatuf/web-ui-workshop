@@ -6,7 +6,7 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { ListItemAvatar, Avatar, Typography, ListItemText, ListItem, Divider, IconButton } from '@material-ui/core';
+import { ListItemAvatar, Avatar, Typography, ListItemText, ListItem, Divider, IconButton, ListItemSecondaryAction } from '@material-ui/core';
 import { FavoriteBorder, Cached, ChatBubbleOutline} from '@material-ui/icons';
 export default class TweetItem extends React.PureComponent {
   render() {
@@ -40,26 +40,26 @@ export default class TweetItem extends React.PureComponent {
                 >
                   {item.text}
                 </Typography>
-                <div>
-                  <IconButton>
-                    <FavoriteBorder />
-                    <Typography component="span" variant="body2" className={classes.text} color="textPrimary">
-                      {item.favorite_count}
-                    </Typography>
-                  </IconButton>
-                  <IconButton>
-                    <Cached />
-                    <Typography component="span" variant="body2" className={classes.text} color="textPrimary">
-                      {item.retweet_count}
-                    </Typography>
-                  </IconButton>
-                  <IconButton>
-                    <ChatBubbleOutline />
-                  </IconButton>
-                </div>
               </Fragment>
             }
           />
+          <ListItemSecondaryAction className={classes.iconContainer}>
+            <IconButton>
+              <FavoriteBorder />
+              <Typography component="span" variant="body2" className={classes.text} color="textPrimary">
+                {item.favorite_count}
+              </Typography>
+            </IconButton>
+            <IconButton>
+              <Cached />
+              <Typography component="span" variant="body2" className={classes.text} color="textPrimary">
+                {item.retweet_count}
+              </Typography>
+            </IconButton>
+            <IconButton>
+              <ChatBubbleOutline />
+            </IconButton>
+          </ListItemSecondaryAction>
         </ListItem>
         <Divider />
       </Fragment>
