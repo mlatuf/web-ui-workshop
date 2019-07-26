@@ -11,7 +11,13 @@ const makeSelectUsername = () => createSelector(
   (homeState) => homeState.get('username')
 );
 
+const makeSelectTweetsCount = () => createSelector(
+  selectHome,
+  (homeState) => homeState.get('count')
+);
+
 export {
   selectHome,
   makeSelectUsername,
+  makeSelectTweetsCount
 };
