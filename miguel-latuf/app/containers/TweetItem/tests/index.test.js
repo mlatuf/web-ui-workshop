@@ -1,16 +1,16 @@
 /**
- * Test the repo list item
+ * Test the tweet item
  */
 
 import React from 'react';
 import { shallow, render } from 'enzyme';
 
-import ListItem from 'components/ListItem';
-import RepoListItem from '../RepoListItem';
+import TweetItem from '../TweetItem';
+import { ListItem } from '@material-ui/core';
 
-const renderComponent = (props = {}) => render(<RepoListItem {...props} />);
+const renderComponent = (props = {}) => render(<TweetItem {...props} />);
 
-describe.only('<RepoListItem />', () => {
+describe.only('<TweetItem />', () => {
   let item;
 
   // Before each test reset the item data for safety
@@ -27,38 +27,14 @@ describe.only('<RepoListItem />', () => {
   });
 
   it('should render a ListItem', () => {
-    const renderedComponent = shallow(<RepoListItem item={item} />);
+    const renderedComponent = shallow(<TweetItem item={item} />);
     expect(renderedComponent.find(ListItem).length).toBe(1);
   });
 
-  it('should not render the current username', () => {
-    const renderedComponent = renderComponent({
-      item,
-      currentUser: item.owner.login
-    });
-    expect(renderedComponent.text()).not.toContain(item.owner.login);
-  });
 
-  it('should render usernames that are not the current one', () => {
-    const renderedComponent = renderComponent({
-      item,
-      currentUser: 'nikgraf'
-    });
-    expect(renderedComponent.text()).toContain(item.owner.login);
-  });
-
-  it('should render the repo name', () => {
+  it('should render the user name', () => {
     const renderedComponent = renderComponent({ item });
-    expect(renderedComponent.text()).toContain(item.name);
+    expect(renderedComponent.text()).toContain(item.user.name);
   });
 
-  it('should render the issue count', () => {
-    const renderedComponent = renderComponent({ item });
-    expect(renderedComponent.text()).toContain(item.open_issues_count);
-  });
-
-  it('should render the IssueIcon', () => {
-    const renderedComponent = renderComponent({ item });
-    expect(renderedComponent.find('svg').length).toBe(1);
-  });
 });
