@@ -44,9 +44,9 @@ const App = () => {
           variant="fullWidth"
           indicatorColor="primary"
           textColor="primary">
-          <Tab icon={<HomeIcon />} aria-label="Home" />
-          <Tab icon={<SearchIcon />} aria-label="Search" />
-          <Tab icon={<SettingsIcon />} aria-label="Settings" />
+          <Tab icon={<HomeIcon style={{ fontSize: 30 }}/>} aria-label="Home" />
+          <Tab icon={<SearchIcon style={{ fontSize: 30 }}/>} aria-label="Search" />
+          <Tab icon={<SettingsIcon style={{ fontSize: 30 }}/>} aria-label="Settings" />
         </Tabs>
         {value === 0 && <HomePage />}
         {value === 1 && <HomePage />}

@@ -12,9 +12,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.background.paper,
-  },
-  user: {
-    fontWeight: "bold"
+    padding: 0
   },
   text: {
     display: 'inline'
@@ -23,14 +21,21 @@ const useStyles = makeStyles(theme => ({
     display: 'inline',
     textAlign: "center"
   },
-  iconContainer: {
+  card: {
+    boxShadow: 'none'
+  },
+  cardHeader: {
+    padding: 0,
+    paddingTop: '2%'
+  },
+  cardContent: {
+    padding: '2%'
+  },
+  cardMedia: {
+    padding: '0 4%'
+  },
+  cardActions: {
     display: 'inline-flex',
-    position: 'relative',
-    top: 0,
-    right: 0,
-    width: '90%',
-    padding: '0px 12%',
-    transform: 'translateY(-20%)',
     justifyContent: 'space-between'
   }
 }));

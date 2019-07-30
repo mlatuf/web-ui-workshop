@@ -23,7 +23,8 @@
     "pretest": "npm run test:clean && npm run lint",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:clean": "rimraf ./coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "eslint:init": "eslint --init"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
