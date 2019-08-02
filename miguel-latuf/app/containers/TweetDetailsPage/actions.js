@@ -1,5 +1,5 @@
 /*
- * Home Actions
+ * Tweet details Actions
  *
  * Actions change things in your application
  * Since this boilerplate uses a uni-directional data flow, specifically redux,
@@ -15,11 +15,36 @@
  *    }
  */
 
-import { CHANGE_TWEETSCOUNT } from './constants';
+import {
+  LOAD_DETAILS_SUCCESS,
+  LOAD_DETAILS,
+  LOAD_DETAILS_ERROR,
+  CHANGE_TWEET_ID
+} from './constants';
 
-export function changeTweetsCount(count) {
+export function loadTweetDetails() {
   return {
-    type: CHANGE_TWEETSCOUNT,
-    count
+    type: LOAD_DETAILS,
   };
+}
+
+export function detailsLoaded(details) {
+  return {
+    type: LOAD_DETAILS_SUCCESS,
+    details
+  }
+}
+
+export function detailsLoadingError(error) {
+  return {
+    type: LOAD_DETAILS_ERROR,
+    error,
+  };
+}
+
+export function changeTweetId(tweetId) {
+  return {
+    type: CHANGE_TWEET_ID,
+    tweetId
+  }
 }

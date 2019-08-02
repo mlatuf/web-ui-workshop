@@ -1,10 +1,17 @@
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { makeSelectCurrentUser } from 'containers/App/selectors';
+import { push } from 'connected-react-router';
+import { changeTweetId } from 'containers/TweetDetailsPage/actions';
 import TweetItem from './TweetItem';
 
-export default connect(
-  createStructuredSelector({
-    currentUser: makeSelectCurrentUser()
-  })
-)(TweetItem);
+const mapDispatchToProps =(dispatch) => ({
+  onChangeTweetId: (value) => {
+    dispatch(changeTweetId(value));
+  },
+  push:(url) => { 
+    dispatch(push(url)); 
+  }
+
+});
+
+export default connect(null, mapDispatchToProps)(TweetItem);
+export { mapDispatchToProps };

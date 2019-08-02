@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import exampleJson from './example.json';
 
 /**
  * Parses the JSON returned by a network request
@@ -12,8 +11,7 @@ function parseJSON(response) {
   if (response.status === 204 || response.status === 205) {
     return null;
   }
-  return exampleJson;
-  // return response.json();
+  return response.json();
 }
 
 /**

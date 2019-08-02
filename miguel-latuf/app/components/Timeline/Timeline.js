@@ -84,7 +84,7 @@ const Timeline = ({ loading, error, tweets, tweetsCount, onIncrementCount }) => 
           </ListItem>}
         </List>
       </>
-      );
+    );
   }
 };
 
