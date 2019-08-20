@@ -5,18 +5,17 @@
 
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Avatar, Typography, ListItem, Divider, IconButton, Card, CardHeader, CardContent, CardActions, CardMedia} from '@material-ui/core';
-import { FavoriteBorder, Cached, ChatBubbleOutline} from '@material-ui/icons';
+import { Avatar, Typography, ListItem, Divider, IconButton, Card, CardHeader, CardContent, CardActions, CardMedia } from '@material-ui/core';
+import { FavoriteBorder, Cached, ChatBubbleOutline } from '@material-ui/icons';
 export default class TweetItem extends React.PureComponent {
   render() {
     const { item, classes, key } = this.props;
-
     const twitterScreenTitle = (screen_name) => { return "@" + screen_name; }
-
+    
     return (
       <Fragment>
         <ListItem alignItems="flex-start" key={key}>
-          <Card className={classes.card}>
+          <Card className={classes.card} onClick={() => this.props.push('/details/' + item.id_str)}>
             <CardHeader
               className={classes.cardHeader} 
               title={item.user.name} 

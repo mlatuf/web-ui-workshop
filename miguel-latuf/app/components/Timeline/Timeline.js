@@ -1,44 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { List, ListItem, ListItemText, Divider, LinearProgress } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { useStyles } from './styles';
 import TweetItem from 'containers/TweetItem';
 import UseInfiniteScroll from 'components/UseInfiniteScroll';
-
-const useStyles = makeStyles(theme => ({
-  progress: {
-    flexGrow: 1
-  },
-  root: {
-    width: '100%',
-    backgroundColor: theme.palette.background.paper,
-    padding: 0
-  },
-  text: {
-    display: 'inline'
-  },
-  centeredText: {
-    display: 'inline',
-    textAlign: "center"
-  },
-  card: {
-    boxShadow: 'none'
-  },
-  cardHeader: {
-    padding: 0,
-    paddingTop: '2%'
-  },
-  cardContent: {
-    padding: '2%'
-  },
-  cardMedia: {
-    padding: '0 4%'
-  },
-  cardActions: {
-    display: 'inline-flex',
-    justifyContent: 'space-between'
-  }
-}));
 
 const Timeline = ({ loading, error, tweets, tweetsCount, onIncrementCount }) => {
   const classes = useStyles();
@@ -84,7 +49,7 @@ const Timeline = ({ loading, error, tweets, tweetsCount, onIncrementCount }) => 
           </ListItem>}
         </List>
       </>
-      );
+    );
   }
 };
 

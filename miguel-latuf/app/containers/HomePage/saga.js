@@ -7,6 +7,8 @@ import {
 } from 'redux-saga/effects';
 import { LOAD_TWEETS } from 'containers/App/constants';
 import { tweetLoadingError, tweetsLoaded } from 'containers/App/actions';
+import exampleJson from 'utils/example.json';
+
 
 import request from 'utils/request';
 import { makeSelectTweetsCount } from 'containers/HomePage/selectors';
@@ -16,7 +18,8 @@ export function* getTweets() {
   const requestURL = `http://localhost:8080/timeline?count=100`;
   // const requestURL = `http://localhost:8080/timeline?count=${count}`;
   try {
-    const tweets = yield call(request, requestURL);
+    // const tweets = yield call(request, requestURL);
+    const tweets = exampleJson;
     yield put(tweetsLoaded(tweets));
   } catch (err) {
     yield put (tweetLoadingError(err));

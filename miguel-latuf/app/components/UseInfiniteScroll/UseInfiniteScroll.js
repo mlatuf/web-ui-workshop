@@ -5,12 +5,20 @@ const UseInfiniteScroll = (callback) => {
   const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
+    const ac = new AbortController();
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      ac.abort();
+    }
   }, []);
 
   useEffect(() => {
-    if (!isFetching) return;
+    const ac = new AbortController();
+    if (!isFetching) {
+      ac.abort();
+      return;
+    };
     callback(() => {
       console.log('called back');
     });

@@ -5,10 +5,8 @@
  */
 
 import React, { Fragment } from 'react';
-import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import Timeline from 'components/Timeline';
-import './style.scss';
 
 export default class HomePage extends React.PureComponent {
 
