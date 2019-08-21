@@ -32,7 +32,9 @@ const useStyles = makeStyles(theme => ({
   },
   cardActions: {
     display: 'inline-flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    width: '100%',
+    padding: theme.spacing(1,2)
   }
 }));
 

@@ -44,7 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
   info: {
     display:'inline-flex',
-    padding: theme.spacing(1)
+    padding: theme.spacing(1),
+    color: grey[600]
+
   },
   divider: {
     marginTop: theme.spacing(1)
