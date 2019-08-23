@@ -18,8 +18,7 @@ export function* getTweets() {
   const requestURL = `http://localhost:8080/timeline?count=100`;
   // const requestURL = `http://localhost:8080/timeline?count=${count}`;
   try {
-    // const tweets = yield call(request, requestURL);
-    const tweets = exampleJson;
+    const tweets = ( process.env.MOCK ) ? exampleJson : yield call(request, requestURL);
     yield put(tweetsLoaded(tweets));
   } catch (err) {
     yield put (tweetLoadingError(err));
