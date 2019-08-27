@@ -8,6 +8,7 @@ import SearchIcon from "@material-ui/icons/SearchOutlined";
 import SettingsIcon from "@material-ui/icons/SettingsOutlined";
 
 import HomePage from "containers/HomePage/Loadable";
+import SearchPage from "../../containers/SearchPage";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -54,7 +55,7 @@ const NavigationTabs = (props) => {
         <HomePage />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <h3>Search</h3>
+        <SearchPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <h3>Settings</h3>
