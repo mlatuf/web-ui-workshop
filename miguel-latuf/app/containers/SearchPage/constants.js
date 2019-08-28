@@ -8,4 +8,6 @@
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
-
+export const LOAD_TRENDS = 'Gwitter/Search/LOAD_TRENDS';
+export const LOAD_TRENDS_SUCCESS = 'Gwitter/Search/LOAD_TRENDS_SUCCESS';
+export const LOAD_TRENDS_ERROR = 'Gwitter/Search/LOAD_TRENDS_ERROR';

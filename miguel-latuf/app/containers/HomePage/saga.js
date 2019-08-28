@@ -1,5 +1,5 @@
 /**
- * Gets the repositories of the user from Github
+ * Gets the tweets for the timeline
  */
 
 import {
