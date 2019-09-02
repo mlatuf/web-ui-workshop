@@ -36,7 +36,6 @@ const App = () => {
           <Route exact path="/" component={NavigationTabsComponent} />    
           <Route path="/search" component={NavigationTabsComponent} />    
           <Route path="/settings" component={NavigationTabsComponent} />
-          {/* <Route path="/details" component={TweetDetailsPage} />    */}
           <Route path="/details/:id" component={TweetDetailsPage} />   
         </Switch>
       </Paper>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ArrowBack, FavoriteBorder, Cached, ChatBubbleOutline }  from '@material-ui/icons';
 import { Typography, Card, CardHeader, Avatar, CardContent, CardMedia, CardActions, LinearProgress, AppBar, Toolbar, Fab, Divider } from '@material-ui/core';
 import { useStyles } from './styles';
+import { get } from 'lodash';
 
 const TweetDetails = ({ loading, error, tweetData, goBack }) => {
   const classes = useStyles();
@@ -58,7 +59,7 @@ const TweetDetails = ({ loading, error, tweetData, goBack }) => {
             title={tweet.user.name}
             subheader={twitterScreenTitle(tweet.user.screen_name)}
             avatar={
-              <Avatar alt={twitterScreenTitle(tweet.user.screen_name)} src={tweet.user.profile_image_url} className={classes.cardAvatar}/>
+              <Avatar alt={twitterScreenTitle(tweet.user.screen_name)} src={_.get(tweet, ['user', 'profile_image_url'], 'Image not found')} className={classes.cardAvatar}/>
             } />
           <CardContent className={classes.cardContent}>
             <Typography variant="body2" component="p">
@@ -69,13 +70,15 @@ const TweetDetails = ({ loading, error, tweetData, goBack }) => {
             <CardMedia
               className={classes.cardMedia}
               component="img"
-              src={tweet.extended_entities.media[0].media_url}
+              src={_.get(tweet, ['extended_entities', 'media', '0', 'media_url'], 'Image not found')}
             />
           }
           <CardContent className={classes.cardContent}>
-            <Typography variant="body2" component="span">
-              {twitterCreationDate(tweet.created_at)}
-            </Typography>
+            <div className={classes.info}>
+              <Typography variant="body2" component="span">
+                {twitterCreationDate(tweet.created_at)}
+              </Typography>
+            </div>
             <Divider className={classes.divider}/>
             <div className={classes.info}>
               <Typography variant="body2" component="span">

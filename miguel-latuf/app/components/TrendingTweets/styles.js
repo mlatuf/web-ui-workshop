@@ -15,26 +15,6 @@ const useStyles = makeStyles(theme => ({
   centeredText: {
     display: 'inline',
     textAlign: "center"
-  },
-  card: {
-    boxShadow: 'none',
-    cursor: 'pointer'
-  },
-  cardHeader: {
-    padding: 0,
-    paddingTop: '2%'
-  },
-  cardContent: {
-    padding: '2%'
-  },
-  cardMedia: {
-    padding: '0 4%'
-  },
-  cardActions: {
-    display: 'inline-flex',
-    justifyContent: 'space-between',
-    width: '100%',
-    padding: theme.spacing(1,2)
   }
 }));
 

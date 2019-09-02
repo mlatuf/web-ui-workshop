@@ -7,6 +7,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, Typography, ListItem, Divider, IconButton, Card, CardHeader, CardContent, CardActions, CardMedia } from '@material-ui/core';
 import { FavoriteBorder, Cached, ChatBubbleOutline } from '@material-ui/icons';
+import { get } from 'lodash';
 export default class TweetItem extends React.PureComponent {
   render() {
     const { item, classes, key } = this.props;
@@ -21,7 +22,7 @@ export default class TweetItem extends React.PureComponent {
               title={item.user.name} 
               subheader={twitterScreenTitle(item.user.screen_name)}
               avatar={
-                <Avatar alt="Remy Sharp" src={item.user.profile_image_url} />
+                <Avatar alt={twitterScreenTitle(item.user.screen_name)} src={_.get(item, ['user', 'profile_image_url'], 'Image not found')} />
               }/>
             <CardContent className={classes.cardContent}>
               <Typography variant="body2" component="p">
@@ -32,7 +33,7 @@ export default class TweetItem extends React.PureComponent {
               <CardMedia
                 className={classes.cardMedia}
                 component="img"
-                src={item.extended_entities.media[0].media_url}
+                src={_.get(item, ['extended_entities', 'media', '0', 'media_url'], 'Image not found')}
               />
             }
             <CardActions className={classes.cardActions}>
