@@ -2,13 +2,13 @@ import { fromJS } from 'immutable';
 
 import {
   selectHome,
-  makeSelectUsername,
-} from '../selectors';
+  makeSelectTweetsCount,
+} from 'app/containers/HomePage/selectors';
 
 describe('selectHome', () => {
   it('should select the home state', () => {
     const homeState = fromJS({
-      userData: {},
+      tweetsCount: 8,
     });
     const mockedState = fromJS({
       home: homeState,
@@ -17,15 +17,15 @@ describe('selectHome', () => {
   });
 });
 
-describe('makeSelectUsername', () => {
-  const usernameSelector = makeSelectUsername();
-  it('should select the username', () => {
-    const username = 'flexdinesh';
+describe('makeSelectTweetsCount', () => {
+  const tweetsCountSelector = makeSelectTweetsCount();
+  it('should select the tweetsCount', () => {
+    const count = 8;
     const mockedState = fromJS({
       home: {
-        username,
+        count,
       },
     });
-    expect(usernameSelector(mockedState)).toEqual(username);
+    expect(tweetsCountSelector(mockedState)).toEqual(count);
   });
 });

@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from 'enzyme';
-
+import TestRenderer from 'react-test-renderer';
 import LoadingIndicator from '../index';
 
 describe('<LoadingIndicator />', () => {
-  it('should render 13 divs', () => {
-    const renderedComponent = render(<LoadingIndicator />);
-    expect(renderedComponent.length).toBe(1);
+  it('render the loader correctly', () => {
+    const wrapper = TestRenderer.create(<LoadingIndicator />);
+    expect(wrapper).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
 });

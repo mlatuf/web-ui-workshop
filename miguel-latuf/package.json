@@ -15,7 +15,7 @@
     "clean": "npm run test:clean && npm run build:clean",
     "eslint:fix": "eslint -- . --ignore-path .gitignore --fix",
     "lint": "npm run lint:js",
-    "lint:eslint": "eslint --ignore-path .gitignore",
+    "lint:eslint": "eslint --ignore-path .eslintignore",
     "lint:js": "npm run lint:eslint -- . ",
     "start": "cross-env NODE_ENV=development node server",
     "start:mock": "cross-env NODE_ENV=development --env.MOCK=true node server",
@@ -23,6 +23,7 @@
     "start:production": "npm run test && npm run build && npm run start:prod",
     "pretest": "npm run test:clean && npm run lint",
     "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:silent": "cross-env NODE_ENV=test jest --silent /app/components/*",
     "test:clean": "rimraf ./coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "eslint:init": "eslint --init"
