@@ -29422,7 +29422,7 @@ const mockTweetDetails = {
   "lang": "es"
 };
 
-const mockTrends = [
+const mockTrends = 
   {
     "trends": [
       {
@@ -29785,6 +29785,6 @@ const mockTrends = [
       }
     ]
   }
-];
+;
 
 export { mockTimeline, mockTweetDetails, mockTrends };

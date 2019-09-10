@@ -1,10 +1,11 @@
 import React from 'react';
-import TestRenderer from 'react-test-renderer';
+import { createShallow } from '@material-ui/core/test-utils';
 import LoadingIndicator from '../index';
 
 describe('<LoadingIndicator />', () => {
   it('render the loader correctly', () => {
-    const wrapper = TestRenderer.create(<LoadingIndicator />);
+    const shallow = createShallow({ dive: true });
+    const wrapper = shallow(<LoadingIndicator />);
     expect(wrapper).toBeDefined();
     expect(wrapper).toMatchSnapshot();
   });

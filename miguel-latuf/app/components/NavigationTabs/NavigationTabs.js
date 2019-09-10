@@ -9,6 +9,7 @@ import SettingsIcon from "@material-ui/icons/SettingsOutlined";
 
 import HomePage from "containers/HomePage/Loadable";
 import SearchPage from "../../containers/SearchPage";
+import { useStyles } from "./styles";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -34,7 +35,8 @@ TabPanel.propTypes = {
 };
 
 const NavigationTabs = (props) => {
-  const { classes, value, onChange } = props;
+  const { value, onChange } = props;
+  const classes = useStyles();
 
   return (
     <Fragment>
