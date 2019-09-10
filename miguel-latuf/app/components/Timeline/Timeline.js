@@ -32,7 +32,7 @@ const Timeline = ({ loading, error, tweets, tweetsCount, onIncrementCount }) => 
     return <List className={classes.root}>{ErrorComponent}</List>
   } 
 
-  if (tweets !== false) {
+  if (tweets && tweets !== false) {
     let content = listTweets.map((item) => (
       <TweetItem classes={classes} item={item} key={item.id}/>
     ));

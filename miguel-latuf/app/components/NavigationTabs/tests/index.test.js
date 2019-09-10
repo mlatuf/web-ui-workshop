@@ -1,10 +1,11 @@
 import React from 'react';
-import TestRenderer from 'react-test-renderer';
+import { createShallow } from '@material-ui/core/test-utils';
 import NavigationTabs from '../NavigationTabs';
 
 describe('<NavigationTabs />', () => {
   it('render the navigation tabs correctly', () => {
-    const wrapper = TestRenderer.create(<NavigationTabs />);
+    const shallow = createShallow();
+    const wrapper = shallow(<NavigationTabs />);
     expect(wrapper).toBeDefined();
     expect(wrapper).toMatchSnapshot();
   });

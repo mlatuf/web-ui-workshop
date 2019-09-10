@@ -18,7 +18,7 @@ const TrendingTweets = ({ loading, error, trends }) => {
     return <List className={classes.root}>{ErrorComponent}</List>
   } 
   
-  if (trends !== false) {
+  if (trends && trends !== false) {
     let content = trends.map((item) => (
       <ListItem className={classes.root} key={item.name}>
         <ListItemText className={classes.centeredText}>{item.name}</ListItemText>

@@ -1,43 +1,40 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import TweetItem from 'containers/TweetItem';
-import { List, LinearProgress } from '@material-ui/core';
-import Timeline from 'app/components/Timeline';
-import { mockTimeline } from 'app/utils/mocks/timeline';
+import { createShallow, createMount } from '@material-ui/core/test-utils';
+import Timeline from 'components/Timeline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import LoadingIndicator from 'components/LoadingIndicator';
+import { mockTimeline } from 'utils/mocks/timeline';
+import { LinearProgress, ListItemText } from '@material-ui/core';
 
 describe('<Timeline />', () => {
   it('should render the loading indicator when its loading', () => {
-    const renderedComponent = shallow(<Timeline loading />);
-    expect(
-      renderedComponent.contains(<List component={LinearProgress} />)
-    ).toEqual(true);
-  });
-
-  it('should render an error if loading failed', () => {
-    const renderedComponent = mount(
-      <Timeline loading={false} error={{ message: 'Loading failed!' }} />
+    const mount = createMount();
+    const wrapper = mount(
+      <Timeline loading={true} error={false} tweets={[]}/>
     );
-    expect(renderedComponent.text()).toMatch(/Something went wrong/);
+    expect(wrapper).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(LinearProgress));
   });
 
-  it('should render the tweets timeline if loading was successful', () => {
-    const tweets = mockTimeline;
-    const renderedComponent = shallow(
-      <Timeline tweets={tweets} error={false} />
+
+  test('should render an error if loading failed', () => {
+    const mount = createMount();
+    const wrapper = mount(
+      <Timeline loading={false} error={true} tweets={[]} />
     );
-
-    expect(
-      renderedComponent.contains(
-        <List items={tweets} component={TweetItem} />
-      )
-    ).toEqual(true);
+    expect(wrapper).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ListItemText).text()).toEqual('Something went wrong, please try again');
   });
 
-  it('should not render anything if nothing interesting is provided', () => {
-    const renderedComponent = shallow(
-      <Timeline tweets={false} error={false} loading={false} />
+  test.skip('should render the tweets Timeline if loading was successful', () => {
+    const mount = createMount();
+    const wrapper = mount(
+      <Timeline loading={false} tweets={mockTimeline} error={false} />
     );
-
-    expect(renderedComponent.html()).toEqual(null);
+    expect(wrapper).toBeDefined();
+    expect(wrapper).toMatchSnapshot();
   });
+
 });
