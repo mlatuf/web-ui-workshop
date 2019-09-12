@@ -12,30 +12,30 @@ import TrendingTweets from 'components/TrendingTweets';
 
 export default class SearchPage extends React.PureComponent {
 
-  componentDidMount() {
-    const { getTrends } = this.props;
-    getTrends();
-  }
+    componentDidMount() {
+        const { getTrends } = this.props;
+        getTrends();
+    }
   
-  render() {
-    const { loading, error, trends } = this.props;
-    const trendListProps = {
-      loading,
-      error,
-      trends
-    };
+    render() {
+        const { loading, error, trends } = this.props;
+        const trendListProps = {
+            loading,
+            error,
+            trends
+        };
   
-    return (
-      <Fragment>
-        <SearchTweets />
-        {trends && <TrendingTweets {...trendListProps} />}
-      </Fragment>
-    );
-  }
+        return (
+            <Fragment>
+                <SearchTweets />
+                {trends && <TrendingTweets {...trendListProps} />}
+            </Fragment>
+        );
+    }
 }
 
 SearchPage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  trends: PropTypes.oneOfType([PropTypes.array, PropTypes.bool])
-}
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+    trends: PropTypes.oneOfType([PropTypes.array, PropTypes.bool])
+};

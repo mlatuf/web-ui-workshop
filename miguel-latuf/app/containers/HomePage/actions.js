@@ -18,8 +18,8 @@
 import { CHANGE_TWEETSCOUNT } from './constants';
 
 export function changeTweetsCount(count) {
-  return {
-    type: CHANGE_TWEETSCOUNT,
-    count
-  };
+    return {
+        type: CHANGE_TWEETSCOUNT,
+        count
+    };
 }

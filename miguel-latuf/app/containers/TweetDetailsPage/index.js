@@ -12,22 +12,22 @@ import saga from './saga';
 import TweetDetailsPage from './TweetDetailsPage';
 
 const mapDispatchToProps =(dispatch) => ({
-  onChangeTweetId: (value) => {
-    dispatch(changeTweetId(value));
-  },
-  getTweetDetails: (evt) => {
-    if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-    dispatch(loadTweetDetails());
-  },
-  goBack:() => { dispatch(goBack())}
+    onChangeTweetId: (value) => {
+        dispatch(changeTweetId(value));
+    },
+    getTweetDetails: (evt) => {
+        if (evt !== undefined && evt.preventDefault) evt.preventDefault();
+        dispatch(loadTweetDetails());
+    },
+    goBack:() => { dispatch(goBack());}
   
 });
 
 const mapStateToProps = createStructuredSelector({
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
-  tweetData: makeSelectTweetDetails(),
-  tweetId: makeSelectTweetId()
+    loading: makeSelectLoading(),
+    error: makeSelectError(),
+    tweetData: makeSelectTweetDetails(),
+    tweetId: makeSelectTweetId()
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);

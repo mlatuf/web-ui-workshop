@@ -13,45 +13,45 @@
 import { fromJS } from 'immutable';
 
 import {
-  LOAD_DETAILS,
-  LOAD_DETAILS_SUCCESS,
-  LOAD_DETAILS_ERROR,
-  CHANGE_TWEET_ID,
+    LOAD_DETAILS,
+    LOAD_DETAILS_SUCCESS,
+    LOAD_DETAILS_ERROR,
+    CHANGE_TWEET_ID,
 } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
-  loading: false,
-  error: false,
-  tweetData: false,
-  tweetId: null
+    loading: false,
+    error: false,
+    tweetData: false,
+    tweetId: null
 });
 
 function tweetdetailsReducer(state = initialState, action) {
-  switch (action.type) {
+    switch (action.type) {
 
     case LOAD_DETAILS:
-      return state
-        .set('loading', true)
-        .set('error', false)
-        .setIn('tweetData', false);
+        return state
+            .set('loading', true)
+            .set('error', false)
+            .setIn('tweetData', false);
 
     case LOAD_DETAILS_SUCCESS:
-      return state
-        .setIn('tweetData', action.details)
-        .set('loading', false);
+        return state
+            .setIn('tweetData', action.details)
+            .set('loading', false);
 
     case LOAD_DETAILS_ERROR:
-      return state
-        .set('error', action.error)
-        .set('loading', false);  
+        return state
+            .set('error', action.error)
+            .set('loading', false);  
 
     case CHANGE_TWEET_ID:
-      return state.set('tweetId', action.tweetId);
+        return state.set('tweetId', action.tweetId);
 
     default:
-      return state;
-  }
+        return state;
+    }
 }
 
 export default tweetdetailsReducer;

@@ -13,7 +13,7 @@
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
     "clean": "npm run test:clean && npm run build:clean",
-    "eslint:fix": "eslint -- . --ignore-path .gitignore --fix",
+    "eslint:fix": "eslint --fix",
     "lint": "npm run lint:js",
     "lint:eslint": "eslint --ignore-path .eslintignore",
     "lint:js": "npm run lint:eslint -- . ",
@@ -23,10 +23,11 @@
     "start:production": "npm run test && npm run build && npm run start:prod",
     "pretest": "npm run test:clean && npm run lint",
     "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:silent": "cross-env NODE_ENV=test jest -- /app/components/Timeline",
+    "test:silent": "cross-env NODE_ENV=test jest -- /app/components",
     "test:clean": "rimraf ./coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-    "eslint:init": "eslint --init"
+    "eslint:init": "eslint --init",
+    "fix-memory-limit": "cross-env LIMIT=2048 increase-memory-limit"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
@@ -91,7 +92,9 @@
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-import-resolver-webpack": "0.10.1",
+    "eslint-plugin-enzyme": "^0.1.1",
     "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-redux-saga": "0.9.0",
@@ -126,5 +129,8 @@
   "engines": {
     "node": ">=8.10.0",
     "npm": ">=5"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

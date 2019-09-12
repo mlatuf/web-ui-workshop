@@ -13,38 +13,38 @@
 import { fromJS } from 'immutable';
 
 import {
-  LOAD_TWEETS,
-  LOAD_TWEETS_SUCCESS,
-  LOAD_TWEETS_ERROR,
+    LOAD_TWEETS,
+    LOAD_TWEETS_SUCCESS,
+    LOAD_TWEETS_ERROR,
 } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
-  loading: false,
-  error: false,
-  tweets: false
+    loading: false,
+    error: false,
+    tweets: false
 });
 
 function appReducer(state = initialState, action) {
-  switch (action.type) {
+    switch (action.type) {
 
     case LOAD_TWEETS:
-      return state
-      .set('loading', true)
-      .set('error', false)
-      .setIn('tweets', false);
+        return state
+            .set('loading', true)
+            .set('error', false)
+            .setIn('tweets', false);
     case LOAD_TWEETS_SUCCESS:
-      return state
-        .setIn('tweets', action.tweets)
-        .set('loading', false);
+        return state
+            .setIn('tweets', action.tweets)
+            .set('loading', false);
     case LOAD_TWEETS_ERROR:
-      return state
-        .set('error', action.error)
-        .set('loading', false);  
+        return state
+            .set('error', action.error)
+            .set('loading', false);  
 
     default:
-      return state;
-  }
+        return state;
+    }
 }
 
 export default appReducer;

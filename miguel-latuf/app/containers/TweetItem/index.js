@@ -3,9 +3,9 @@ import { push } from 'connected-react-router';
 import TweetItem from './TweetItem';
 
 const mapDispatchToProps =(dispatch) => ({
-  push:(url) => { 
-    dispatch(push(url)); 
-  }
+    push:(url) => { 
+        dispatch(push(url)); 
+    }
 
 });
 
