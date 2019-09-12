@@ -24,12 +24,12 @@ const Timeline = ({ loading, error, tweets, tweetsCount, onIncrementCount }) => 
   }
   
   if(error !== false) {
-    const ErrorComponent = () => (
-      <ListItem className={classes.root}>
-        <ListItemText className={classes.centeredText}>Something went wrong, please try again!</ListItemText>
-      </ListItem>
-    );
-    return <List className={classes.root}>{ErrorComponent}</List>
+    return (
+      <List className={classes.root}>
+        <ListItem className={classes.root}>
+          <ListItemText className={classes.centeredText}>Something went wrong, please try again!</ListItemText>
+        </ListItem>
+      </List>);
   } 
 
   if (tweets && tweets !== false) {
