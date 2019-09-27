@@ -1,31 +1,31 @@
 import { fromJS } from 'immutable';
 
 import {
-  selectHome,
-  makeSelectUsername,
-} from '../selectors';
+    selectHome,
+    makeSelectTweetsCount,
+} from 'app/containers/HomePage/selectors';
 
 describe('selectHome', () => {
-  it('should select the home state', () => {
-    const homeState = fromJS({
-      userData: {},
+    it('should select the home state', () => {
+        const homeState = fromJS({
+            tweetsCount: 8,
+        });
+        const mockedState = fromJS({
+            home: homeState,
+        });
+        expect(selectHome(mockedState)).toEqual(homeState);
     });
-    const mockedState = fromJS({
-      home: homeState,
-    });
-    expect(selectHome(mockedState)).toEqual(homeState);
-  });
 });
 
-describe('makeSelectUsername', () => {
-  const usernameSelector = makeSelectUsername();
-  it('should select the username', () => {
-    const username = 'flexdinesh';
-    const mockedState = fromJS({
-      home: {
-        username,
-      },
+describe('makeSelectTweetsCount', () => {
+    const tweetsCountSelector = makeSelectTweetsCount();
+    it('should select the tweetsCount', () => {
+        const count = 8;
+        const mockedState = fromJS({
+            home: {
+                count,
+            },
+        });
+        expect(tweetsCountSelector(mockedState)).toEqual(count);
     });
-    expect(usernameSelector(mockedState)).toEqual(username);
-  });
 });

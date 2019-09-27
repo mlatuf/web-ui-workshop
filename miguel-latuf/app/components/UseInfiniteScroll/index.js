@@ -1,1 +1,1 @@
-export { default } from './UseInfiniteScroll'
+export { default } from './UseInfiniteScroll';

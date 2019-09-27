@@ -16,35 +16,35 @@
  */
 
 import {
-  LOAD_DETAILS_SUCCESS,
-  LOAD_DETAILS,
-  LOAD_DETAILS_ERROR,
-  CHANGE_TWEET_ID
+    LOAD_DETAILS_SUCCESS,
+    LOAD_DETAILS,
+    LOAD_DETAILS_ERROR,
+    CHANGE_TWEET_ID
 } from './constants';
 
 export function loadTweetDetails() {
-  return {
-    type: LOAD_DETAILS,
-  };
+    return {
+        type: LOAD_DETAILS,
+    };
 }
 
 export function detailsLoaded(details) {
-  return {
-    type: LOAD_DETAILS_SUCCESS,
-    details
-  }
+    return {
+        type: LOAD_DETAILS_SUCCESS,
+        details
+    };
 }
 
 export function detailsLoadingError(error) {
-  return {
-    type: LOAD_DETAILS_ERROR,
-    error,
-  };
+    return {
+        type: LOAD_DETAILS_ERROR,
+        error,
+    };
 }
 
 export function changeTweetId(tweetId) {
-  return {
-    type: CHANGE_TWEET_ID,
-    tweetId
-  }
+    return {
+        type: CHANGE_TWEET_ID,
+        tweetId
+    };
 }

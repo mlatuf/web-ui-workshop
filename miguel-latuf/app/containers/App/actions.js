@@ -16,27 +16,27 @@
  */
 
 import {
-  LOAD_TWEETS_SUCCESS,
-  LOAD_TWEETS,
-  LOAD_TWEETS_ERROR,
+    LOAD_TWEETS_SUCCESS,
+    LOAD_TWEETS,
+    LOAD_TWEETS_ERROR,
 } from './constants';
 
 export function loadTweets() {
-  return {
-    type: LOAD_TWEETS,
-  };
+    return {
+        type: LOAD_TWEETS,
+    };
 }
 
 export function tweetsLoaded(tweets) {
-  return {
-    type: LOAD_TWEETS_SUCCESS,
-    tweets
-  }
+    return {
+        type: LOAD_TWEETS_SUCCESS,
+        tweets
+    };
 }
 
 export function tweetLoadingError(error) {
-  return {
-    type: LOAD_TWEETS_ERROR,
-    error,
-  };
+    return {
+        type: LOAD_TWEETS_ERROR,
+        error,
+    };
 }

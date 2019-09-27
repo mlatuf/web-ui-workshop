@@ -1,54 +1,48 @@
-import { shallow, mount } from 'enzyme';
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import React from 'react';
-
+import { createMount } from '@material-ui/core/test-utils';
+import Timeline from 'components/Timeline';
 import TweetItem from 'containers/TweetItem';
-import List from 'components/List';
-import LoadingIndicator from 'components/LoadingIndicator';
-import Timeline from '../index';
+import { Provider } from 'react-redux';
+import { mockTimeline } from 'utils/mocks/toTests/timeline';
+import { LinearProgress, ListItemText } from '@material-ui/core';
+import configureStore from '../../../configureStore';
+import toJson from 'enzyme-to-json';
 
 describe('<Timeline />', () => {
-  it('should render the loading indicator when its loading', () => {
-    const renderedComponent = shallow(<Timeline loading />);
-    expect(
-      renderedComponent.contains(<List component={LoadingIndicator} />)
-    ).toEqual(true);
-  });
 
-  it('should render an error if loading failed', () => {
-    const renderedComponent = mount(
-      <Timeline loading={false} error={{ message: 'Loading failed!' }} />
-    );
-    expect(renderedComponent.text()).toMatch(/Something went wrong/);
-  });
+    test('should render the loading indicator when its loading', () => {
+        const mount = createMount();
+        const wrapper = mount(
+            <Timeline loading={true} error={false} tweets={[]} />
+        );
+        expect(wrapper).toBeDefined();
+        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find(LinearProgress));
+    });
 
-  it('should render the repositories if loading was successful', () => {
-    const repos = [
-      {
-        owner: {
-          login: 'flexdinesh'
-        },
-        html_url: 'https://github.com/flexdinesh/react-redux-boilerplate',
-        name: 'react-redux-boilerplate',
-        open_issues_count: 20,
-        full_name: 'flexdinesh/react-redux-boilerplate'
-      }
-    ];
-    const renderedComponent = shallow(
-      <Timeline repos={repos} error={false} />
-    );
+    test('should render an error if loading failed', () => {
+        const mount = createMount();
+        const wrapper = mount(
+            <Timeline loading={false} error={true} tweets={[]} />
+        );
+        expect(wrapper).toBeDefined();
+        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.find(ListItemText).text()).toEqual('Something went wrong, please try again!');
+    });
 
-    expect(
-      renderedComponent.contains(
-        <List items={repos} component={TweetItem} />
-      )
-    ).toEqual(true);
-  });
+    test('should render the tweets Timeline if loading was successful', () => {
+        const mount = createMount();
+        const store = configureStore({}, {});
+        const wrapper = mount(
+            <Provider store={store}>
+                <Timeline loading={false} tweets={mockTimeline} error={false} />
+            </Provider>
+        );
+        expect(toJson(wrapper)).toBeDefined();
+        expect(toJson(wrapper)).toMatchSnapshot();
+        expect(wrapper.find(TweetItem).length).toBeGreaterThanOrEqual(1);
+    });
 
-  it('should not render anything if nothing interesting is provided', () => {
-    const renderedComponent = shallow(
-      <ReposList repos={false} error={false} loading={false} />
-    );
-
-    expect(renderedComponent.html()).toEqual(null);
-  });
 });

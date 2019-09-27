@@ -1,17 +1,17 @@
-import { CHANGE_USERNAME } from '../constants';
+import { CHANGE_TWEETSCOUNT } from 'app/containers/HomePage/constants';
 
-import { changeUsername } from '../actions';
+import { changeTweetsCount } from 'app/containers/HomePage/actions';
 
 describe('Home Actions', () => {
-  describe('changeUsername', () => {
-    it('should return the correct type and the passed name', () => {
-      const fixture = 'Max';
-      const expectedResult = {
-        type: CHANGE_USERNAME,
-        name: fixture
-      };
+    describe('changeTweetsCount', () => {
+        it('should return the correct type and the passed count', () => {
+            const tweetsCount = 16;
+            const expectedResult = {
+                type: CHANGE_TWEETSCOUNT,
+                count: tweetsCount
+            };
 
-      expect(changeUsername(fixture)).toEqual(expectedResult);
+            expect(changeTweetsCount(tweetsCount)).toEqual(expectedResult);
+        });
     });
-  });
 });

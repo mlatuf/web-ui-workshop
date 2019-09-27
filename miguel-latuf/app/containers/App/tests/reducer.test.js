@@ -2,59 +2,50 @@ import { fromJS } from 'immutable';
 
 import appReducer from '../reducer';
 import {
-  loadRepos,
-  reposLoaded,
-  repoLoadingError,
+    loadTweets,
+    tweetsLoaded,
+    tweetLoadingError,
 } from '../actions';
+import { mockTimeline } from '../../../utils/mocks/toTests/timeline';
 
 describe('appReducer', () => {
-  let state;
-  beforeEach(() => {
-    state = fromJS({
-      loading: false,
-      error: false,
-      currentUser: false,
-      userData: fromJS({
-        repositories: false,
-      }),
+    let state;
+    beforeEach(() => {
+        state = fromJS({
+            loading: false,
+            error: false,
+            tweets: false
+        });
     });
-  });
 
-  it('should return the initial state', () => {
-    const expectedResult = state;
-    expect(appReducer(undefined, {})).toEqual(expectedResult);
-  });
+    it('should return the initial state', () => {
+        const expectedResult = state;
+        expect(appReducer(undefined, {})).toEqual(expectedResult);
+    });
 
-  it('should handle the loadRepos action correctly', () => {
-    const expectedResult = state
-      .set('loading', true)
-      .set('error', false)
-      .setIn(['userData', 'repositories'], false);
+    it('should handle the loadTweets action correctly', () => {
+        const expectedResult = state
+            .set('loading', true)
+            .set('error', false)
+            .setIn('tweets', false);
 
-    expect(appReducer(state, loadRepos())).toEqual(expectedResult);
-  });
+        expect(appReducer(state, loadTweets())).toEqual(expectedResult);
+    });
 
-  it('should handle the reposLoaded action correctly', () => {
-    const fixture = [{
-      name: 'My Repo',
-    }];
-    const username = 'test';
-    const expectedResult = state
-      .setIn(['userData', 'repositories'], fixture)
-      .set('loading', false)
-      .set('currentUser', username);
+    it('should handle the tweetsLoaded action correctly', () => {
+        const tweets = mockTimeline;
+        const expectedResult = state
+            .setIn('tweets', tweets)
+            .set('loading', false);
 
-    expect(appReducer(state, reposLoaded(fixture, username))).toEqual(expectedResult);
-  });
+        expect(appReducer(state, tweetsLoaded(tweets))).toEqual(expectedResult);
+    });
 
-  it('should handle the repoLoadingError action correctly', () => {
-    const fixture = {
-      msg: 'Not found',
-    };
-    const expectedResult = state
-      .set('error', fixture)
-      .set('loading', false);
+    it('should handle the tweetLoadingError action correctly', () => {
+        const expectedResult = state
+            .set('error', true)
+            .set('loading', false);
 
-    expect(appReducer(state, repoLoadingError(fixture))).toEqual(expectedResult);
-  });
+        expect(appReducer(state, tweetLoadingError(true))).toEqual(expectedResult);
+    });
 });

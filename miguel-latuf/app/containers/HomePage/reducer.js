@@ -15,18 +15,18 @@ import { CHANGE_TWEETSCOUNT } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
-  tweetsCount: 8
+    tweetsCount: 8
 });
 
 function homeReducer(state = initialState, action) {
-  switch (action.type) {
+    switch (action.type) {
 
     case CHANGE_TWEETSCOUNT:
-      return state.set('tweetsCount', action.count);   
+        return state.set('tweetsCount', action.count);   
     
     default:
-      return state;
-  }
+        return state;
+    }
 }
 
 export default homeReducer;

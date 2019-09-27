@@ -1,51 +1,43 @@
+/* eslint-disable no-undef */
 import {
-  LOAD_REPOS,
-  LOAD_REPOS_SUCCESS,
-  LOAD_REPOS_ERROR,
+    LOAD_TWEETS,
+    LOAD_TWEETS_SUCCESS,
+    LOAD_TWEETS_ERROR,
 } from '../constants';
 
 import {
-  loadRepos,
-  reposLoaded,
-  repoLoadingError,
+    loadTweets,
+    tweetsLoaded,
+    tweetLoadingError,
 } from '../actions';
 
+import { mockTimeline } from '../../../utils/mocks/toTests/timeline';
+
 describe('App Actions', () => {
-  describe('loadRepos', () => {
-    it('should return the correct type', () => {
-      const expectedResult = {
-        type: LOAD_REPOS,
-      };
 
-      expect(loadRepos()).toEqual(expectedResult);
+    test('should return the correct type', () => {
+        const expectedResult = {
+            type: LOAD_TWEETS,
+        };
+
+        expect(loadTweets()).toEqual(expectedResult);
     });
-  });
 
-  describe('reposLoaded', () => {
-    it('should return the correct type and the passed repos', () => {
-      const fixture = ['Test'];
-      const username = 'test';
-      const expectedResult = {
-        type: LOAD_REPOS_SUCCESS,
-        repos: fixture,
-        username,
-      };
+    test('should return the correct type and the passed tweets', () => {
+        const expectedResult = {
+            type: LOAD_TWEETS_SUCCESS,
+            tweets: mockTimeline
+        };
 
-      expect(reposLoaded(fixture, username)).toEqual(expectedResult);
+        expect(tweetsLoaded(mockTimeline)).toEqual(expectedResult);
     });
-  });
 
-  describe('repoLoadingError', () => {
-    it('should return the correct type and the error', () => {
-      const fixture = {
-        msg: 'Something went wrong!',
-      };
-      const expectedResult = {
-        type: LOAD_REPOS_ERROR,
-        error: fixture,
-      };
+    test('should return the correct type and the error', () => {
+        const expectedResult = {
+            type: LOAD_TWEETS_ERROR,
+            error: true,
+        };
 
-      expect(repoLoadingError(fixture)).toEqual(expectedResult);
+        expect(tweetLoadingError(true)).toEqual(expectedResult);
     });
-  });
 });
