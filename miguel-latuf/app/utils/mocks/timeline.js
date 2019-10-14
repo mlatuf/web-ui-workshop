@@ -29197,62 +29197,127 @@ const mockTimeline = [
 ];
 
 const mockTweetDetails = {
-  "created_at": "Fri Aug 23 12:20:32 +0000 2019",
-  "id": 1164875065353105400,
-  "id_str": "1164875065353105408",
-  "text": "RT @TNTecno: Cómo guardar los mensajes directos de YouTube antes de que Google los elimine https://t.co/y0UaTFt9U7",
+  "created_at": "Wed Oct 09 13:00:01 +0000 2019",
+  "id": 1181917230470180900,
+  "id_str": "1181917230470180864",
+  "text": "#Reconocimiento Hoy cumple años Jorge Burruchaga. ¡Felicidades! 👏👏 https://t.co/0kT1KLJqc1",
   "truncated": false,
   "entities": {
-    "hashtags": [],
-    "symbols": [],
-    "user_mentions": [
+    "hashtags": [
       {
-        "screen_name": "TNTecno",
-        "name": "TN Tecno",
-        "id": 44623555,
-        "id_str": "44623555",
+        "text": "Reconocimiento",
         "indices": [
-          3,
-          11
+          0,
+          15
         ]
       }
     ],
-    "urls": [
+    "symbols": [],
+    "user_mentions": [],
+    "urls": [],
+    "media": [
       {
-        "url": "https://t.co/y0UaTFt9U7",
-        "expanded_url": "https://tn.com.ar/tecno/paso-paso/como-guardar-los-mensajes-directos-de-youtube-antes-de-que-google-los-elimine_988670",
-        "display_url": "tn.com.ar/tecno/paso-pas…",
+        "id": 1181607137325322200,
+        "id_str": "1181607137325322242",
         "indices": [
-          91,
-          114
-        ]
+          67,
+          90
+        ],
+        "media_url": "http://pbs.twimg.com/media/EGXpblRXkAIW3Mr.jpg",
+        "media_url_https": "https://pbs.twimg.com/media/EGXpblRXkAIW3Mr.jpg",
+        "url": "https://t.co/0kT1KLJqc1",
+        "display_url": "pic.twitter.com/0kT1KLJqc1",
+        "expanded_url": "https://twitter.com/Argentina/status/1181917230470180864/photo/1",
+        "type": "photo",
+        "sizes": {
+          "medium": {
+            "w": 1080,
+            "h": 1080,
+            "resize": "fit"
+          },
+          "thumb": {
+            "w": 150,
+            "h": 150,
+            "resize": "crop"
+          },
+          "large": {
+            "w": 1080,
+            "h": 1080,
+            "resize": "fit"
+          },
+          "small": {
+            "w": 680,
+            "h": 680,
+            "resize": "fit"
+          }
+        }
       }
     ]
   },
-  "source": "<a href=\"https://dlvrit.com/\" rel=\"nofollow\">dlvr.it</a>",
+  "extended_entities": {
+    "media": [
+      {
+        "id": 1181607137325322200,
+        "id_str": "1181607137325322242",
+        "indices": [
+          67,
+          90
+        ],
+        "media_url": "http://pbs.twimg.com/media/EGXpblRXkAIW3Mr.jpg",
+        "media_url_https": "https://pbs.twimg.com/media/EGXpblRXkAIW3Mr.jpg",
+        "url": "https://t.co/0kT1KLJqc1",
+        "display_url": "pic.twitter.com/0kT1KLJqc1",
+        "expanded_url": "https://twitter.com/Argentina/status/1181917230470180864/photo/1",
+        "type": "photo",
+        "sizes": {
+          "medium": {
+            "w": 1080,
+            "h": 1080,
+            "resize": "fit"
+          },
+          "thumb": {
+            "w": 150,
+            "h": 150,
+            "resize": "crop"
+          },
+          "large": {
+            "w": 1080,
+            "h": 1080,
+            "resize": "fit"
+          },
+          "small": {
+            "w": 680,
+            "h": 680,
+            "resize": "fit"
+          }
+        }
+      }
+    ]
+  },
+  "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
   "in_reply_to_status_id": null,
   "in_reply_to_status_id_str": null,
   "in_reply_to_user_id": null,
   "in_reply_to_user_id_str": null,
   "in_reply_to_screen_name": null,
   "user": {
-    "id": 25992212,
-    "id_str": "25992212",
-    "name": "TN - Todo Noticias",
-    "screen_name": "todonoticias",
+    "id": 2495199115,
+    "id_str": "2495199115",
+    "name": "Selección Argentina 🇦🇷",
+    "screen_name": "Argentina",
     "location": "Argentina",
-    "description": "Noticias las 24 horas, por el canal líder en audiencia y credibilidad de Argentina",
-    "url": "http://t.co/TX6TF1nOUs",
+    "description": "Twitter oficial de la Selección Argentina. \n\nFan Page: /AFASeleccionArgentina\n\nInstagram: /afaseleccion\n\nYouTube: /afaseleccion",
+    "url": "https://t.co/si6hz2UUBr",
     "entities": {
       "url": {
         "urls": [
           {
-            "url": "http://t.co/TX6TF1nOUs",
-            "expanded_url": "http://www.tn.com.ar",
-            "display_url": "tn.com.ar",
+            "url": "https://t.co/si6hz2UUBr",
+            "expanded_url": "http://afa.com.ar",
+            "display_url": "afa.com.ar",
             "indices": [
               0,
-              22
+              23
             ]
           }
         ]
@@ -29262,34 +29327,34 @@ const mockTweetDetails = {
       }
     },
     "protected": false,
-    "followers_count": 4821330,
-    "friends_count": 21,
-    "listed_count": 9204,
-    "created_at": "Mon Mar 23 12:35:07 +0000 2009",
-    "favourites_count": 1,
+    "followers_count": 3699259,
+    "friends_count": 60,
+    "listed_count": 4045,
+    "created_at": "Wed May 14 22:28:45 +0000 2014",
+    "favourites_count": 443,
     "utc_offset": null,
     "time_zone": null,
-    "geo_enabled": false,
+    "geo_enabled": true,
     "verified": true,
-    "statuses_count": 123485,
+    "statuses_count": 50278,
     "lang": null,
     "contributors_enabled": false,
     "is_translator": false,
-    "is_translation_enabled": true,
-    "profile_background_color": "666666",
+    "is_translation_enabled": false,
+    "profile_background_color": "C0DEED",
     "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
     "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-    "profile_background_tile": true,
-    "profile_image_url": "http://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
-    "profile_image_url_https": "https://pbs.twimg.com/profile_images/962300034661396481/OzHK6TZr_normal.jpg",
-    "profile_banner_url": "https://pbs.twimg.com/profile_banners/25992212/1533675118",
-    "profile_link_color": "D51D2E",
-    "profile_sidebar_border_color": "FFFFFF",
-    "profile_sidebar_fill_color": "314BB9",
-    "profile_text_color": "000000",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1084825953497481216/xuX8tkF9_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1084825953497481216/xuX8tkF9_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/2495199115/1530555192",
+    "profile_link_color": "1DA1F2",
+    "profile_sidebar_border_color": "C0DEED",
+    "profile_sidebar_fill_color": "DDEEF6",
+    "profile_text_color": "333333",
     "profile_use_background_image": true,
     "has_extended_profile": false,
-    "default_profile": false,
+    "default_profile": true,
     "default_profile_image": false,
     "following": true,
     "follow_request_sent": false,
@@ -29300,121 +29365,9 @@ const mockTweetDetails = {
   "coordinates": null,
   "place": null,
   "contributors": null,
-  "retweeted_status": {
-    "created_at": "Fri Aug 23 12:19:15 +0000 2019",
-    "id": 1164874740118564900,
-    "id_str": "1164874740118564865",
-    "text": "Cómo guardar los mensajes directos de YouTube antes de que Google los elimine https://t.co/y0UaTFt9U7",
-    "truncated": false,
-    "entities": {
-      "hashtags": [],
-      "symbols": [],
-      "user_mentions": [],
-      "urls": [
-        {
-          "url": "https://t.co/y0UaTFt9U7",
-          "expanded_url": "https://tn.com.ar/tecno/paso-paso/como-guardar-los-mensajes-directos-de-youtube-antes-de-que-google-los-elimine_988670",
-          "display_url": "tn.com.ar/tecno/paso-pas…",
-          "indices": [
-            78,
-            101
-          ]
-        }
-      ]
-    },
-    "source": "<a href=\"https://zapier.com/\" rel=\"nofollow\">Zapier.com</a>",
-    "in_reply_to_status_id": null,
-    "in_reply_to_status_id_str": null,
-    "in_reply_to_user_id": null,
-    "in_reply_to_user_id_str": null,
-    "in_reply_to_screen_name": null,
-    "user": {
-      "id": 44623555,
-      "id_str": "44623555",
-      "name": "TN Tecno",
-      "screen_name": "TNTecno",
-      "location": "",
-      "description": "Sábados a las 16:30 por TN. Todos los días en https://t.co/9Ahjv0jhw8 Tu lugar nerd en la web.",
-      "url": "http://t.co/eA5asWy1ZK",
-      "entities": {
-        "url": {
-          "urls": [
-            {
-              "url": "http://t.co/eA5asWy1ZK",
-              "expanded_url": "http://tn.com.ar/tecno",
-              "display_url": "tn.com.ar/tecno",
-              "indices": [
-                0,
-                22
-              ]
-            }
-          ]
-        },
-        "description": {
-          "urls": [
-            {
-              "url": "https://t.co/9Ahjv0jhw8",
-              "expanded_url": "http://TN.com.ar/tecno",
-              "display_url": "TN.com.ar/tecno",
-              "indices": [
-                46,
-                69
-              ]
-            }
-          ]
-        }
-      },
-      "protected": false,
-      "followers_count": 144503,
-      "friends_count": 9,
-      "listed_count": 440,
-      "created_at": "Thu Jun 04 14:11:23 +0000 2009",
-      "favourites_count": 49,
-      "utc_offset": null,
-      "time_zone": null,
-      "geo_enabled": false,
-      "verified": true,
-      "statuses_count": 11120,
-      "lang": null,
-      "contributors_enabled": false,
-      "is_translator": false,
-      "is_translation_enabled": false,
-      "profile_background_color": "57A4C8",
-      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-      "profile_background_tile": true,
-      "profile_image_url": "http://pbs.twimg.com/profile_images/801082217795620864/xMlA0Lqu_normal.jpg",
-      "profile_image_url_https": "https://pbs.twimg.com/profile_images/801082217795620864/xMlA0Lqu_normal.jpg",
-      "profile_banner_url": "https://pbs.twimg.com/profile_banners/44623555/1398346181",
-      "profile_link_color": "0084B4",
-      "profile_sidebar_border_color": "FFFFFF",
-      "profile_sidebar_fill_color": "DDEEF6",
-      "profile_text_color": "333333",
-      "profile_use_background_image": true,
-      "has_extended_profile": false,
-      "default_profile": false,
-      "default_profile_image": false,
-      "following": false,
-      "follow_request_sent": false,
-      "notifications": false,
-      "translator_type": "none"
-    },
-    "geo": null,
-    "coordinates": null,
-    "place": null,
-    "contributors": null,
-    "is_quote_status": false,
-    "retweet_count": 3,
-    "favorite_count": 0,
-    "favorited": false,
-    "retweeted": false,
-    "possibly_sensitive": false,
-    "possibly_sensitive_appealable": false,
-    "lang": "es"
-  },
   "is_quote_status": false,
-  "retweet_count": 3,
-  "favorite_count": 0,
+  "retweet_count": 10,
+  "favorite_count": 88,
   "favorited": false,
   "retweeted": false,
   "possibly_sensitive": false,
@@ -29422,369 +29375,4 @@ const mockTweetDetails = {
   "lang": "es"
 };
 
-const mockTrends = [
-  {
-    "trends": [
-      {
-        "name": "#NoAlGolpeKirchnerista",
-        "url": "http://twitter.com/search?q=%23NoAlGolpeKirchnerista",
-        "promoted_content": null,
-        "query": "%23NoAlGolpeKirchnerista",
-        "tweet_volume": 13916
-      },
-      {
-        "name": "De La Cruz",
-        "url": "http://twitter.com/search?q=%22De+La+Cruz%22",
-        "promoted_content": null,
-        "query": "%22De+La+Cruz%22",
-        "tweet_volume": 52929
-      },
-      {
-        "name": "#SrMacriHagaseCargo",
-        "url": "http://twitter.com/search?q=%23SrMacriHagaseCargo",
-        "promoted_content": null,
-        "query": "%23SrMacriHagaseCargo",
-        "tweet_volume": 52818
-      },
-      {
-        "name": "Angelici",
-        "url": "http://twitter.com/search?q=Angelici",
-        "promoted_content": null,
-        "query": "Angelici",
-        "tweet_volume": 23467
-      },
-      {
-        "name": "#DolarArgentina",
-        "url": "http://twitter.com/search?q=%23DolarArgentina",
-        "promoted_content": null,
-        "query": "%23DolarArgentina",
-        "tweet_volume": null
-      },
-      {
-        "name": "Joker",
-        "url": "http://twitter.com/search?q=Joker",
-        "promoted_content": null,
-        "query": "Joker",
-        "tweet_volume": 180767
-      },
-      {
-        "name": "Pipino",
-        "url": "http://twitter.com/search?q=Pipino",
-        "promoted_content": null,
-        "query": "Pipino",
-        "tweet_volume": null
-      },
-      {
-        "name": "Sol de Mayo",
-        "url": "http://twitter.com/search?q=%22Sol+de+Mayo%22",
-        "promoted_content": null,
-        "query": "%22Sol+de+Mayo%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "#CorteYConfeccion",
-        "url": "http://twitter.com/search?q=%23CorteYConfeccion",
-        "promoted_content": null,
-        "query": "%23CorteYConfeccion",
-        "tweet_volume": null
-      },
-      {
-        "name": "Pierotti",
-        "url": "http://twitter.com/search?q=Pierotti",
-        "promoted_content": null,
-        "query": "Pierotti",
-        "tweet_volume": null
-      },
-      {
-        "name": "Francesco Totti",
-        "url": "http://twitter.com/search?q=%22Francesco+Totti%22",
-        "promoted_content": null,
-        "query": "%22Francesco+Totti%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "#CopaArgentinaEnTyCSports",
-        "url": "http://twitter.com/search?q=%23CopaArgentinaEnTyCSports",
-        "promoted_content": null,
-        "query": "%23CopaArgentinaEnTyCSports",
-        "tweet_volume": null
-      },
-      {
-        "name": "ESTÁN TODOS CAGADOS",
-        "url": "http://twitter.com/search?q=%22EST%C3%81N+TODOS+CAGADOS%22",
-        "promoted_content": null,
-        "query": "%22EST%C3%81N+TODOS+CAGADOS%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "HSBC",
-        "url": "http://twitter.com/search?q=HSBC",
-        "promoted_content": null,
-        "query": "HSBC",
-        "tweet_volume": null
-      },
-      {
-        "name": "Zonda",
-        "url": "http://twitter.com/search?q=Zonda",
-        "promoted_content": null,
-        "query": "Zonda",
-        "tweet_volume": null
-      },
-      {
-        "name": "Polanski",
-        "url": "http://twitter.com/search?q=Polanski",
-        "promoted_content": null,
-        "query": "Polanski",
-        "tweet_volume": null
-      },
-      {
-        "name": "Braun",
-        "url": "http://twitter.com/search?q=Braun",
-        "promoted_content": null,
-        "query": "Braun",
-        "tweet_volume": null
-      },
-      {
-        "name": "Lisandro Martínez",
-        "url": "http://twitter.com/search?q=%22Lisandro+Mart%C3%ADnez%22",
-        "promoted_content": null,
-        "query": "%22Lisandro+Mart%C3%ADnez%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "Martel",
-        "url": "http://twitter.com/search?q=Martel",
-        "promoted_content": null,
-        "query": "Martel",
-        "tweet_volume": null
-      },
-      {
-        "name": "Marsella",
-        "url": "http://twitter.com/search?q=Marsella",
-        "promoted_content": null,
-        "query": "Marsella",
-        "tweet_volume": null
-      },
-      {
-        "name": "Fritzler",
-        "url": "http://twitter.com/search?q=Fritzler",
-        "promoted_content": null,
-        "query": "Fritzler",
-        "tweet_volume": null
-      },
-      {
-        "name": "Blanca Cotta",
-        "url": "http://twitter.com/search?q=%22Blanca+Cotta%22",
-        "promoted_content": null,
-        "query": "%22Blanca+Cotta%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "Parlamento",
-        "url": "http://twitter.com/search?q=Parlamento",
-        "promoted_content": null,
-        "query": "Parlamento",
-        "tweet_volume": 50489
-      },
-      {
-        "name": "Backstreet Boys",
-        "url": "http://twitter.com/search?q=%22Backstreet+Boys%22",
-        "promoted_content": null,
-        "query": "%22Backstreet+Boys%22",
-        "tweet_volume": 11465
-      },
-      {
-        "name": "Top Race",
-        "url": "http://twitter.com/search?q=%22Top+Race%22",
-        "promoted_content": null,
-        "query": "%22Top+Race%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "Travis Scott",
-        "url": "http://twitter.com/search?q=%22Travis+Scott%22",
-        "promoted_content": null,
-        "query": "%22Travis+Scott%22",
-        "tweet_volume": 51950
-      },
-      {
-        "name": "Dzumhur",
-        "url": "http://twitter.com/search?q=Dzumhur",
-        "promoted_content": null,
-        "query": "Dzumhur",
-        "tweet_volume": null
-      },
-      {
-        "name": "HACELO CUEVAS",
-        "url": "http://twitter.com/search?q=%22HACELO+CUEVAS%22",
-        "promoted_content": null,
-        "query": "%22HACELO+CUEVAS%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "Gioja",
-        "url": "http://twitter.com/search?q=Gioja",
-        "promoted_content": null,
-        "query": "Gioja",
-        "tweet_volume": null
-      },
-      {
-        "name": "Baylac",
-        "url": "http://twitter.com/search?q=Baylac",
-        "promoted_content": null,
-        "query": "Baylac",
-        "tweet_volume": null
-      },
-      {
-        "name": "INdeR",
-        "url": "http://twitter.com/search?q=INdeR",
-        "promoted_content": null,
-        "query": "INdeR",
-        "tweet_volume": null
-      },
-      {
-        "name": "Resistance",
-        "url": "http://twitter.com/search?q=Resistance",
-        "promoted_content": null,
-        "query": "Resistance",
-        "tweet_volume": 52313
-      },
-      {
-        "name": "Bologna",
-        "url": "http://twitter.com/search?q=Bologna",
-        "promoted_content": null,
-        "query": "Bologna",
-        "tweet_volume": null
-      },
-      {
-        "name": "De Niro",
-        "url": "http://twitter.com/search?q=%22De+Niro%22",
-        "promoted_content": null,
-        "query": "%22De+Niro%22",
-        "tweet_volume": null
-      },
-      {
-        "name": "gobiernen",
-        "url": "http://twitter.com/search?q=gobiernen",
-        "promoted_content": null,
-        "query": "gobiernen",
-        "tweet_volume": null
-      },
-      {
-        "name": "Histórica",
-        "url": "http://twitter.com/search?q=Hist%C3%B3rica",
-        "promoted_content": null,
-        "query": "Hist%C3%B3rica",
-        "tweet_volume": 23033
-      },
-      {
-        "name": "#miercolesconpame",
-        "url": "http://twitter.com/search?q=%23miercolesconpame",
-        "promoted_content": null,
-        "query": "%23miercolesconpame",
-        "tweet_volume": null
-      },
-      {
-        "name": "#EmergenciaSocial",
-        "url": "http://twitter.com/search?q=%23EmergenciaSocial",
-        "promoted_content": null,
-        "query": "%23EmergenciaSocial",
-        "tweet_volume": null
-      },
-      {
-        "name": "#ForoCapitalEmprendedor",
-        "url": "http://twitter.com/search?q=%23ForoCapitalEmprendedor",
-        "promoted_content": null,
-        "query": "%23ForoCapitalEmprendedor",
-        "tweet_volume": null
-      },
-      {
-        "name": "#GPCocina",
-        "url": "http://twitter.com/search?q=%23GPCocina",
-        "promoted_content": null,
-        "query": "%23GPCocina",
-        "tweet_volume": null
-      },
-      {
-        "name": "#DNAWorldTour",
-        "url": "http://twitter.com/search?q=%23DNAWorldTour",
-        "promoted_content": null,
-        "query": "%23DNAWorldTour",
-        "tweet_volume": null
-      },
-      {
-        "name": "#SuperM",
-        "url": "http://twitter.com/search?q=%23SuperM",
-        "promoted_content": null,
-        "query": "%23SuperM",
-        "tweet_volume": 333948
-      },
-      {
-        "name": "#selfieforselflove",
-        "url": "http://twitter.com/search?q=%23selfieforselflove",
-        "promoted_content": null,
-        "query": "%23selfieforselflove",
-        "tweet_volume": null
-      },
-      {
-        "name": "#19OYoVoy",
-        "url": "http://twitter.com/search?q=%2319OYoVoy",
-        "promoted_content": null,
-        "query": "%2319OYoVoy",
-        "tweet_volume": null
-      },
-      {
-        "name": "#FIVBBoysu19",
-        "url": "http://twitter.com/search?q=%23FIVBBoysu19",
-        "promoted_content": null,
-        "query": "%23FIVBBoysu19",
-        "tweet_volume": null
-      },
-      {
-        "name": "#TerceraC",
-        "url": "http://twitter.com/search?q=%23TerceraC",
-        "promoted_content": null,
-        "query": "%23TerceraC",
-        "tweet_volume": null
-      },
-      {
-        "name": "#DefendiendoLaEscuelaPública",
-        "url": "http://twitter.com/search?q=%23DefendiendoLaEscuelaP%C3%BAblica",
-        "promoted_content": null,
-        "query": "%23DefendiendoLaEscuelaP%C3%BAblica",
-        "tweet_volume": null
-      },
-      {
-        "name": "#TeBancoMauricio",
-        "url": "http://twitter.com/search?q=%23TeBancoMauricio",
-        "promoted_content": null,
-        "query": "%23TeBancoMauricio",
-        "tweet_volume": null
-      },
-      {
-        "name": "#LazosDeSangre",
-        "url": "http://twitter.com/search?q=%23LazosDeSangre",
-        "promoted_content": null,
-        "query": "%23LazosDeSangre",
-        "tweet_volume": null
-      },
-      {
-        "name": "#JuntosSomosMasGrandes",
-        "url": "http://twitter.com/search?q=%23JuntosSomosMasGrandes",
-        "promoted_content": null,
-        "query": "%23JuntosSomosMasGrandes",
-        "tweet_volume": null
-      }
-    ],
-    "as_of": "2019-08-28T21:00:45Z",
-    "created_at": "2019-08-28T20:54:46Z",
-    "locations": [
-      {
-        "name": "Argentina",
-        "woeid": 23424747
-      }
-    ]
-  }
-];
-
-export { mockTimeline, mockTweetDetails, mockTrends };
+export { mockTimeline, mockTweetDetails };

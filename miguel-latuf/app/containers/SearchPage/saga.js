@@ -7,7 +7,7 @@ import {
 } from 'redux-saga/effects';
 import { LOAD_TRENDS } from './constants';
 import { trendsLoadingError, trendsLoaded } from './actions';
-import { mockTrends } from 'utils/mocks/timeline.js';
+import { mockTrends } from 'utils/mocks/trends.js';
 
 
 import request from 'utils/request';

@@ -12,6 +12,10 @@ const useStyles = makeStyles(theme => ({
   text: {
     display: 'inline'
   },
+  textSecondary: {
+    display: 'inline',
+    fontSize: '0.8rem'
+  },
   centeredText: {
     display: 'inline',
     textAlign: "center"

@@ -9,6 +9,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import SearchTweets from 'components/SearchTweets';
 import TrendingTweets from 'components/TrendingTweets';
+import { Divider } from '@material-ui/core';
 
 export default class SearchPage extends React.PureComponent {
 
@@ -16,19 +17,32 @@ export default class SearchPage extends React.PureComponent {
     const { getTrends } = this.props;
     getTrends();
   }
+
+  onIncrementCount = () => {
+    const { onChangeTweetsCount } = this.props;
+    onChangeTweetsCount(searchResultsCount + 8);
+  }
   
   render() {
-    const { loading, error, trends } = this.props;
+    const { loading, error, trends, isSearching } = this.props;
     const trendListProps = {
       loading,
       error,
       trends
     };
+    const timelineProps = {
+      loading,
+      error,
+      searchResults,
+      searchResultsCount
+    };
   
     return (
       <Fragment>
         <SearchTweets />
-        {trends && <TrendingTweets {...trendListProps} />}
+        <Divider />
+        {!isSearching && trends && <TrendingTweets {...trendListProps} />}
+        {isSearching && searchResults && <Timeline {...timelineProps} onIncrementCount={this.onIncrementCount}/>}
       </Fragment>
     );
   }
